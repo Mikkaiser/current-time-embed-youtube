@@ -1,79 +1,88 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
+  <div class="main">
+
+    <div id="player"></div>
+  
+    <div class="transcription">
+
+      <span class="p-1">
+        So I've been using the windows terminal for quite some time now and honestly I really like the windows turn all
+        the native theme that comes out of the box when you install it
+      </span>
+      <br>
+      <span class="p-2">I've I've dealt with it. I've never really bothered customizing before. I mean, I've used a bunch of the
+        terminal applications and honestly, the power show is so much better than
+      </span>
+      <br>
+      <span class="p-3">
+        The majority of the ones that I've used it's actually insane I've used other terminal applications that were based
+        on bash and I don't know the I didn't really like them because they seem to crash a lot and they were very annoying
+      
+      </span>
+      <br>
+      <span class="p-4">
+        Annoying to configure but I actually took some time to play around with the parachute and it's configuration file
+        and let me just tell you I am actually
+      
+      </span>
+      <br>
+      <span class="p-5">
+        In shock like I can't believe I've never actually done this before. So, what we're gonna do is I'm gonna show you
+        guys how you can customize
+      
+      </span>
+      <br>
+      <span class="p-6">
+        Your windows powerful terminal and if you want to install it you just have to go to the Microsoft store so just type
+        in Microsoft Store and you're just gonna type in
+      
+      </span>
+      <br>
+      <span class="p-7">
+        Windows, terminal, and you're gonna go over to here, windows terminal free.
+      
+      </span>
+      <br>
+      <span class="p-8">
+        Okay I'm gonna click here and you're just going to install it so once you have the windows terminal installed we're
+      
+      </span>
+      <br>
+      <span class="p-9">
+        Gonna open it up. You're gonna hit control, karma, and it's gonna open up this profiles dot Jason Fire.
+      
+      </span>
+      <br>
+      <span class="p-10">
+        So this is pretty much the Jason file that the terminal is going to be using to determine which you know
+      
+      </span>
+      <br>
+      <span class="p-11">
+        Shell you wanna use which profiles you want news which teams you wanna use and etcetera so let's say if I want to
+        change up the color of our
+      
+      </span>
+      <br>
+      <span class="p-12">
+        The way it looks. We can actually go ahead and find some themes. So, there's a website called Adam Corp.IO slash
+        themes and I have
+      </span>
+    </div>
+    <br>
+  </div>
   <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-  <div id="player"></div>
-
-  <script>
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '360',
-        width: '640',
-        videoId: 'M7lc1UVf-VE',
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    }
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-      event.target.playVideo();
-
-      // The duration of video. In Seconds
-      videoDuration = parseInt(player.getDuration());
-
-      // Applying the interval by one and one second
-      interval = setInterval(getCurrentVideoTime, 1000);
-    }
 
 
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChange(event) {
-      // if (event.data == YT.PlayerState.PLAYING && !done) {
-      //   setTimeout(stopVideo, 6000);
-      //   done = true;
-      // }
-    }
 
-    // Current time of video method
-    function getCurrentVideoTime() {
-      if (player && player.getCurrentTime) {
-        videoTime = parseInt(player.getCurrentTime());
-      }
-
-      if (videoTime < videoDuration) {
-        targetEvent(videoTime);
-      }
-
-      if (videoTime == videoDuration) {
-        clearInterval(interval);
-      }
-    }
-
-    function targetEvent(second) {
-      console.log(second);
-    }
-
-    function stopVideo() {
-      player.stopVideo();
-    }
-  </script>
+  <script src="yt-script.js"></script>
 </body>
 
 </html>

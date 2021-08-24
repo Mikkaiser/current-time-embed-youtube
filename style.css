@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.emphasys {
+  background-color: rgb(165, 255, 143);
+}
+#player {
+  display: block;
+  width: 100%;
+}
+.main {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+.transcription {
+  line-height: 30px;
+  margin-top: 3%;
+}
